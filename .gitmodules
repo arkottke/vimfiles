@@ -4,9 +4,6 @@
 [submodule "pack/plugins/start/ale"]
 	path = pack/plugins/start/ale
 	url = https://github.com/dense-analysis/ale
-[submodule "pack/plugins/start/lightline"]
-	path = pack/plugins/start/lightline
-	url = https://github.com/itchyny/lightline.vim.git
 [submodule "pack/plugins/start/visual-multi"]
 	path = pack/plugins/start/visual-multi
 	url = https://github.com/mg979/vim-visual-multi
@@ -34,3 +31,6 @@
 [submodule "pack/plugins/start/ctrlp"]
 	path = pack/plugins/start/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "pack/plugins/start/dispatch"]
+	path = pack/plugins/start/dispatch
+	url = https://github.com/tpope/vim-dispatch

@@ -1,5 +1,8 @@
 set nocompatible
 
+
+" Disable lightline
+
 let mapleader=","
 
 set bg=dark
@@ -25,4 +28,4 @@ set pythonthreedll=C:/opt/python-3.11.3-embed-amd64/python311.dll
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
 nmap ; :CtrlPBuffer<CR>
 nmap <Leader>t :CtrlP<CR>
-nmap <Leader>r :Tags<CR>
+nmap <Leader>r :CtrlPBufTagAll<CR>
