@@ -1,14 +1,20 @@
 set nocompatible
 
-
-" Disable lightline
-
 let mapleader=","
 
-set bg=dark
-colorscheme one
+syntax enable
+filetype plugin on
+
+set background=dark
+"colorscheme one
+
+" Finding files
+set path+=**
 
 set wildignore+=*.swp,*.zip,*.exe,*.pdf,*.docx,*.xlsx
+set wildmenu
+
+command! MakeTags !ctags -R .
 
 if has('gui_running')
 	set cursorline
@@ -25,7 +31,6 @@ set guioptions=ce
 set pythonthreehome=C:/opt/python-3.11.3-embed-amd64/
 set pythonthreedll=C:/opt/python-3.11.3-embed-amd64/python311.dll
 
-" FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
-nmap ; :CtrlPBuffer<CR>
-nmap <Leader>t :CtrlP<CR>
-nmap <Leader>r :CtrlPBufTagAll<CR>
+" nmap ; :CtrlPBuffer<CR>
+" nmap <Leader>t :CtrlP<CR>
+" nmap <Leader>r :CtrlPBufTagAll<CR>
