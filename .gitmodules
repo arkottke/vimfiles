@@ -22,9 +22,6 @@
 [submodule "pack/plugins/start/sneak"]
 	path = pack/plugins/start/sneak
 	url = https://github.com/justinmk/vim-sneak
-[submodule "pack/plugins/start/ctrlp"]
-	path = pack/plugins/start/ctrlp
-	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "pack/plugins/start/dispatch"]
 	path = pack/plugins/start/dispatch
 	url = https://github.com/tpope/vim-dispatch
@@ -40,3 +37,6 @@
 [submodule "pack/plugins/start/asyncomplete-lsp"]
 	path = pack/plugins/start/asyncomplete-lsp
 	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
+[submodule "pack/plugins/start/unite"]
+	path = pack/plugins/start/unite
+	url = https://github.com/Shougo/unite.vim
