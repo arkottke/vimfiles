@@ -5,6 +5,10 @@ let mapleader=","
 syntax enable
 filetype plugin on
 
+set autoindent
+set expandtab
+set shiftwidth=4
+set tabstop=4
 set termguicolors
 
 "set background=dark
@@ -37,8 +41,18 @@ endif
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
-nnoremap ; :Unite -no-split -buffer-name=buffer buffer<cr>
-nnoremap <leader>t :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
+nnoremap ; :Unite buffer<cr>
+nnoremap <leader>t :Unite -start-insert file_rec<cr>
+
+" Numbering
+set number
+
+augroup numbertoggle
+	autocmd!
+	autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+	autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+
 
 function! s:on_lsp_buffer_enabled() abort
 	setlocal omnifunc=lsp#complete
