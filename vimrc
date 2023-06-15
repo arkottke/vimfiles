@@ -3,15 +3,19 @@ set nocompatible
 let mapleader=","
 
 syntax enable
+
 filetype plugin on
+filetype indent on
 
 set autoindent
 set expandtab
 set shiftwidth=4
 set tabstop=4
 set termguicolors
+set expandtab
+set autoindent
 
-"set background=dark
+set background=dark
 colorscheme catppuccin_frappe
 
 " Finding files
@@ -42,7 +46,7 @@ let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 nnoremap ; :Unite buffer<cr>
-nnoremap <leader>t :Unite -start-insert file_rec<cr>
+nnoremap <leader>, :Unite -start-insert file_rec<cr>
 
 " Numbering
 set number
@@ -52,7 +56,6 @@ augroup numbertoggle
 	autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
 	autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
-
 
 function! s:on_lsp_buffer_enabled() abort
 	setlocal omnifunc=lsp#complete
