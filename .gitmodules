@@ -46,3 +46,12 @@
 [submodule "pack/plugins/start/asyncomplete-buffer"]
 	path = pack/plugins/start/asyncomplete-buffer
 	url = https://github.com/prabirshrestha/asyncomplete-buffer.vim
+[submodule "pack/plugins/start/lsp-ale"]
+	path = pack/plugins/start/lsp-ale
+	url = https://github.com/rhysd/vim-lsp-ale
+[submodule "pack/plugins/start/ale"]
+	path = pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "pack/plugins/start/vimtex"]
+	path = pack/plugins/start/vimtex
+	url = https://github.com/lervag/vimtex

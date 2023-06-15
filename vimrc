@@ -30,13 +30,13 @@ if has('gui_running')
 	set lines=25 columns=90
 endif
 
-set guifont=Consolas:h12:cANSI:qDRAFT
 set guioptions=ce
 "              ||
 "              |+-- use simple dialogs rather than pop-ups
 "              +  use GUI tabs, not console style tabs
 
 if $COMPUTERNAME == 'LTGO647023'
+        set guifont=Consolas:h12:cANSI:qDRAFT
 	" Set Python path
 	set pythonthreehome=C:/opt/python-3.11.3-embed-amd64/
 	set pythonthreedll=C:/opt/python-3.11.3-embed-amd64/python311.dll
@@ -86,8 +86,19 @@ augroup lsp_install
 	autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-let g:lsp_diagnostics_enabled = 1
-" let g:lsp_diagnostics_virtual_text_enabled = 0
-let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 1
-let g:lsp_diagnostics_virtual_text_align = "right"
-let g:lsp_diagnostics_virtual_text_wrap = "truncate"
+let g:ale_virtualtext_cursor = 'disabled'
+let g:ale_set_signs = 1
+let g:ale_sign_error = '•'
+let g:ale_sign_warning = '•'
+
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+highlight link ALEErrorSign    Error
+highlight link ALEWarningSign  Warning
+
+let g:ale_fix_on_save = 1
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black'],
+\}
