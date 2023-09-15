@@ -10,6 +10,7 @@
 [submodule "pack/plugins/start/gitgutter"]
 	path = pack/plugins/start/gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+    branch = main
 [submodule "pack/plugins/start/surround"]
 	path = pack/plugins/start/surround
 	url = https://github.com/tpope/vim-surround
