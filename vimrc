@@ -20,7 +20,10 @@ colorscheme catppuccin_frappe
 
 " Finding files
 set path+=**
-set wildignore+=*.swp,*.zip,*.exe,*.pdf,*.docx,*.xlsx
+set wildignore+=*.swp,*.zip,*.tar.gz,*.7z,*.exe,*.pdf,*.docx,*.xlsx
+" Ignore python files
+set wildignore+=*.egg-info/,*.pyc,__pycache__/,.pytest_cache/,*.whl,.ipynb_checkpoints/,_build/
+
 set wildmenu
 
 command! MakeTags !ctags -R .
@@ -43,10 +46,14 @@ if $COMPUTERNAME == 'LTGO647023'
 endif
 
 let g:unite_source_history_yank_enable = 1
+
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#custom#source('file_rec', 'ignore_globs', split(&wildignore, ','))
 
 nnoremap ; :Unite buffer<cr>
 nnoremap <leader>, :Unite -start-insert file_rec<cr>
+
+
 
 " Numbering
 set number
@@ -86,6 +93,8 @@ augroup lsp_install
 	autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
+let g:sneak#label = 1
+
 let g:ale_virtualtext_cursor = 'disabled'
 let g:ale_set_signs = 1
 let g:ale_sign_error = '•'
@@ -96,9 +105,29 @@ highlight clear ALEWarningSign
 highlight link ALEErrorSign    Error
 highlight link ALEWarningSign  Warning
 
-let g:ale_fix_on_save = 1
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\  'python': ['vim-lsp'],
+\}
 
+let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black'],
 \}
+
+" let g:lsp_settings = {
+" \   'pylsp': {
+" \     'config': {
+" \       'pylsp': {
+" \         'configurationSources': ['pycodestyle'],
+" \         'plugins': {
+" \           'pycodestyle': {
+" \             'maxLineLength': 88,
+" \             'ignore': ['E501'],
+" \           },
+" \         },
+" \       },
+" \     },
+" \   },
+" \}

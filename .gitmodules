@@ -55,3 +55,9 @@
 [submodule "pack/plugins/start/vimtex"]
 	path = pack/plugins/start/vimtex
 	url = https://github.com/lervag/vimtex
+[submodule "pack/plugins/start/airline"]
+	path = pack/plugins/start/airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "pack/plugins/start/tmux-navigator"]
+	path = pack/plugins/start/tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
