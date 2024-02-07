@@ -45,6 +45,9 @@ if $COMPUTERNAME == 'LTGO647023'
 	set pythonthreedll=C:/opt/python-3.11.3-embed-amd64/python311.dll
 endif
 
+# Load the packages
+packl
+
 let g:unite_source_history_yank_enable = 1
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -52,8 +55,6 @@ call unite#custom#source('file_rec', 'ignore_globs', split(&wildignore, ','))
 
 nnoremap ; :Unite buffer<cr>
 nnoremap <leader>, :Unite -start-insert file_rec<cr>
-
-
 
 " Numbering
 set number
@@ -113,21 +114,5 @@ let g:ale_linters = {
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black'],
+\   'python': ['black', 'isort'],
 \}
-
-" let g:lsp_settings = {
-" \   'pylsp': {
-" \     'config': {
-" \       'pylsp': {
-" \         'configurationSources': ['pycodestyle'],
-" \         'plugins': {
-" \           'pycodestyle': {
-" \             'maxLineLength': 88,
-" \             'ignore': ['E501'],
-" \           },
-" \         },
-" \       },
-" \     },
-" \   },
-" \}
