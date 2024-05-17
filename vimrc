@@ -118,6 +118,29 @@ let g:ale_fixers = {
 \}
 
 " Configuration for note taking
-"
+
+function CreateWeeklyMarkdown()
+    " Get the current year and week number
+    let l:year = strftime("%Y")
+    let l:week = strftime("%V")
+
+    " Construct the directory and file path
+    let l:directory = expand("$HOME/Notes/" . l:year)  " Adjust path if needed
+    let l:file = l:directory . "/" . l:year . "W" . l:week . ".md"
+
+    " Check if the directory exists, create it if not
+    if !isdirectory(l:directory)
+        call mkdir(l:directory, "p")
+    endif
+
+    " Create or overwrite the file
+    execute "edit " . l:file
+
+    " Add a basic markdown header (optional)
+    call append(0, "# l:year -  Week " . l:week)
+    normal! G
+endfunction
+
 " Go to index of notes and set working directory to my notes
 nnoremap <leader>ni :e $NOTES_DIR/index.md<CR>:cd $NOTES_DIR<CR>
+nnoremap <leader>nw :call CreateWeeklyMarkdown()<CR>:cd $NOTES_DIR<CR>
