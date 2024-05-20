@@ -62,3 +62,6 @@
 [submodule "pack/plugins/start/tmux-navigator"]
 	path = pack/plugins/start/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "pack/plugins/start/vimproc"]
+	path = pack/plugins/start/vimproc
+	url = https://github.com/Shougo/vimproc
