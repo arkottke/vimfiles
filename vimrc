@@ -38,14 +38,14 @@ set guioptions=ce
 "              |+-- use simple dialogs rather than pop-ups
 "              +  use GUI tabs, not console style tabs
 
-if $COMPUTERNAME == 'LTGO647023'
-        set guifont=Consolas:h12:cANSI:qDRAFT
+if $COMPUTERNAME == 'LTVAC737023'
+    set guifont=FiraCode_Nerd_Font_Mono_Ret:h10:W450:cANSI:qDRAFT
 	" Set Python path
-	set pythonthreehome=C:/opt/python-3.11.3-embed-amd64/
-	set pythonthreedll=C:/opt/python-3.11.3-embed-amd64/python311.dll
+	set pythonthreehome=C:/opt/python-3.12.0-embed-amd64/
+	set pythonthreedll=C:/opt/python-3.12.0-embed-amd64/python312.dll
 endif
 
-# Load the packages
+" Load the packages
 packl
 
 let g:unite_source_history_yank_enable = 1
@@ -116,3 +116,8 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black', 'isort'],
 \}
+
+" Configuration for note taking
+"
+" Go to index of notes and set working directory to my notes
+nnoremap <leader>ni :e $NOTES_DIR/index.md<CR>:cd $NOTES_DIR<CR>
