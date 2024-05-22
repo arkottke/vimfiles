@@ -65,3 +65,6 @@
 [submodule "pack/plugins/start/vimproc"]
 	path = pack/plugins/start/vimproc
 	url = https://github.com/Shougo/vimproc
+[submodule "pack/plugins/start/vimwiki"]
+	path = pack/plugins/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
